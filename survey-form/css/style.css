@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;600;700&display=swap');
+
+body{
+    font-family: 'Mukta', Verdana, sans-serif;
+    background-image: url(https://i.pinimg.com/originals/b7/d5/84/b7d58408aeaf97691d8da61b17e71b1a.jpg);
+    background-repeat: repeat;
+    background-size: cover;
+    padding: 50px;
+}
+
+main{
+    background-color: rgba(253, 253, 253, 0.753);
+    padding: 50px;
+}
+
+form{
+    padding: 0.5rem;
+    width: 50%;
+}
+
+.form-control{
+    width: 75%;
+}
+
+textarea{
+    resize: none;
+    width: 75%;
+}
+
+input[type=submit]{
+    width: 75%;
+
+}
+
+#title{
+    font-weight: 600;
+    margin-bottom: -10px;
+}
+
+#description{
+    font-weight: 300;
+    font-style: italic;
+}
+
+@media (max-width: 380px) {
+    body{
+        background: linear-gradient(225deg, rgb(69, 161, 26), rgb(66, 76, 211));
+        background-repeat: repeat;
+        padding: 20px;
+    }
+
+    .heading{
+        margin: 10px;
+        padding: 5px;
+    }
+
+    main{
+        width: 100%;
+        padding: 0px;
+    }
+
+    form{
+        padding: 20px;
+        width: 100%;
+    }
+
+}

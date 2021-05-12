@@ -1,0 +1,90 @@
+<!--Survey form project made by Virgilio Valentin-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Mapple Music Survey</title>
+</head>
+<body>
+    <main>
+        <div class="heading">
+            <h1 id="title">Mapple Music Survey</h1>
+            <p id="description">Thanks for being a valued Mapple Music user! Please complete this survey to improve our service.</p>
+        </div>
+        <form id="survey-form">
+            <label for="name" id="name-label">Name</label><br>
+            <input type="text" name="user-name" id="name" class="form-control" placeholder="Enter your name" required><br>
+            <label for="email" id="email-label">E-mail</label><br>
+            <input type="email" name="user-email" id="email" class="form-control" placeholder="Enter your email" required><br>
+            <label for="number" id="number-label">Age (optional)</label><br>
+            <input type="number" name="user-age" class="form-control" id="number" min="15" max="90" placeholder="Enter your age"><br>
+            <label for="dropdown" id="dropdown-label">How would you describe yourself?</label><br>
+            <select name="user-type" id="dropdown" class="form-control">
+                <option value="adventurous">Adventurous</option>
+                <option value="creative">Creative</option>
+                <option value="calm">Calm</option>
+                <option value="energetic">Energetic</option>
+                <option value="passionate">Passionate</option>
+            </select><br>
+            <p>How long have you been subscribed to Mapple Music?</p>
+            <label for="zero-months">
+                <input type="radio" name="subscription-time" id="zero-months" value="0">Less than three months
+            </label><br>
+            <label for="three-months">
+                <input type="radio" name="subscription-time" id="three-months" value="3">Three months
+            </label><br>
+            <label for="six-months">
+                <input type="radio" name="subscription-time" id="six-months" value="6">Six months
+            </label><br>
+            <label for="one-year">
+                <input type="radio" name="subscription-time" id="one-year" value="12">One year
+            </label><br>
+            <label for="more-years">
+                <input type="radio" name="subscription-time" id="more-years" value="24">More than a year
+            </label><br>
+
+            <p>Would you recommend Mapple Music to a family member or friend?</p>
+            <label for="definitely">
+                <input type="radio" name="user-recommend" id="definitely" value="definitely">Definitely
+            </label><br>
+            <label for="Maybe">
+                <input type="radio" name="user-recommend" id="maybe" value="maybe">Maybe
+            </label><br>
+            <label for="no">
+                <input type="radio" name="user-recommend" id="no" value="no">Not really
+            </label><br>
+
+            <p>What do you like to listen? (Choose three genres)</p>
+            <label for="genre-pop">
+                <input type="checkbox" name="pop" id="genre-pop" value="pop">Pop
+            </label><br>
+            <label for="genre-country">
+                <input type="checkbox" name="country" id="genre-country" value="country">Country
+            </label><br>
+            <label for="genre-rock">
+                <input type="checkbox" name="rock" id="genre-rock" value="rock">Rock
+            </label><br>
+            <label for="genre-hiphop">
+                <input type="checkbox" name="hiphop" id="genre-hiphop" value="hiphop">Hip-hop
+            </label><br>
+            <label for="genre-dance">
+                <input type="checkbox" name="dance" id="genre-dance" value="dance">Dance
+            </label><br>
+            <label for="genre-latin">
+                <input type="checkbox" name="latin" id="genre-latin" value="latin">Latin
+            </label><br>
+            <label for="genre-rnb">
+                <input type="checkbox" name="rnb" id="genre-rnb" value="rnb">R&B
+            </label><br>
+
+            <p>Any comments or suggestions?</p>
+            <textarea name="comment" class="form-control" id="comments" cols="60" rows="5" placeholder="New artists, more playlists, include music videos..."></textarea><br><br>
+
+            <input type="submit" class="submit-button" value="Submit">
+        </form>
+    </main>
+</body>
+</html>
