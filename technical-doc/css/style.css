@@ -72,3 +72,38 @@ li a:hover:not(.active) {
   display: inline;
   padding: 0px;
 }
+
+@media (max-width: 380px) {
+
+  #navbar ul {
+    height: 207px;
+  }
+
+  #navbar {
+    position: absolute;
+    top: 0;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    max-height: 275px;
+    border: none;
+    z-index: 1;
+    border-bottom: 2px solid;
+    overflow: auto;
+  }
+
+  #main-doc {
+    position: relative;
+    margin-left: 0px;
+    margin-top: 270px;
+    padding: 20px;
+  }
+
+  img{
+    width: 250px;
+  }
+
+  pre{
+    margin-left: -150px;
+  }
+}
