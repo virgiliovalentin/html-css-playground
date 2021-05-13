@@ -5,34 +5,230 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <title>CSS basics</title>
+    <title>JavaScript introduction</title>
 </head>
 <body>
     <nav id="navbar">
-        <header id="title">CSS basics</header>
+        <header id="title">JavaScript introduction</header>
         <ul>
-            <li><a class="nav-link" href="#">What is CSS?</a></li>
-            <li><a class="nav-link" href="#">What is CSS for?</a></li>
-            <li><a class="nav-link" href="#">CSS syntax</a></li>
-            <li><a class="nav-link" href="#">CSS modules</a></li>
-            <li><a class="nav-link" href="#">Browser support information</a></li>
+            <li><a class="nav-link" href="#A_high_level_definition">A high-level definition</a></li>
+            <li><a class="nav-link" href="#What_can_it_really_do">So what can it really do?</a></li>
+            <li><a class="nav-link" href="#What_is_JavaScript_doing_on_your_page">What is JavaScript doing on your page?</a></li>
+            <li><a class="nav-link" href="#How_do_you_add_JavaScript_to_your_page">How do you add JavaScript to your page?</a></li>
+            <li><a class="nav-link" href="#Comments">Comments</a></li>
+            <li><a class="nav-link" href="#Summary">Summary</a></li>
         </ul>
     </nav>
     <main id="main-doc">
-        <section class="main-section">
-            <header></header>
+        <section class="main-section" id="A_high_level_definition">
+            <header>A high-level definition</header>
+            <p>JavaScript is a scripting or programming language that allows you to implement complex features on web pages — every time a web page does more than just sit there and display static information for you to look at — displaying timely content updates, interactive maps, animated 2D/3D graphics, scrolling video jukeboxes, etc. — you can bet that JavaScript is probably involved. It is the third layer of the layer cake of standard web technologies, the other two being HTML and CSS.</p>
+
+            <img src="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/What_is_JavaScript/cake.png" alt="">
+
+            <ul>
+                <li>HTML is the markup language that we use to structure and give meaning to our web content, for example defining paragraphs, headings, and data tables, or embedding images and videos in the page.</li>
+                <li>CSS is a language of style rules that we use to apply styling to our HTML content, for example setting background colors and fonts, and laying out our content in multiple columns.</li>
+                <li>JavaScript is a scripting language that enables you to create dynamically updating content, control multimedia, animate images, and pretty much everything else. (Okay, not everything, but it is amazing what you can achieve with a few lines of JavaScript code.)</li>
+            </ul>
+
+            <p>The three layers build on top of one another nicely. Let's take a simple text label as an example. We can mark it up using HTML to give it structure and purpose:</p>
+
+            <pre><code>&lt;p&gt;Player 1: Chris&lt;/p&gt;</code></pre>
+
+            <p>Then we can add some CSS into the mix to get it looking nice:</p>
+
+            <pre>
+                <code>
+                    p {
+                    font-family: 'helvetica neue', helvetica, sans-serif;
+                    letter-spacing: 1px;
+                    text-transform: uppercase;
+                    text-align: center;
+                    border: 2px solid rgba(0,0,200,0.6);
+                    background: rgba(0,0,200,0.3);
+                    color: rgba(0,0,200,0.6);
+                    box-shadow: 1px 1px 2px rgba(0,0,200,0.4);
+                    border-radius: 10px;
+                    padding: 3px 10px;
+                    display: inline-block;
+                    cursor: pointer;
+                    }
+                </code>
+            </pre>
+
+            <p>And finally, we can add some JavaScript to implement dynamic behavior:</p>
+
+            <pre>
+                <code>
+                    const para = document.querySelector('p');
+                    para.addEventListener('click', updateName);
+                    function updateName() {
+                        let name = prompt('Enter a new name');
+                        para.textContent = 'Player 1: ' + name;
+                    }
+                </code>
+            </pre>
+
+            <p>Try clicking on this last version of the text label to see what happens (note also that you can find this demo on GitHub — see the source code, or run it live)!</p>
+
+            <p>JavaScript can do a lot more than that — let's explore what in more detail.</p>
+
         </section>
-        <section class="main-section">
-            <header></header>
+        <section class="main-section" id="What_can_it_really_do">
+            <header>So what can it really do?</header>
+            <p>The core client-side JavaScript language consists of some common programming features that allow you to do things like:</p>
+
+            <ul>
+                <li>Store useful values inside variables. In the above example for instance, we ask for a new name to be entered then store that name in a variable called <code>name</code>.</li>
+                <li>Operations on pieces of text (known as "strings" in programming). In the above example we take the string "Player 1: " and join it to the <code>name</code> variable to create the complete text label, e.g. ''Player 1: Chris".</li>
+                <li>Running code in response to certain events occurring on a web page. We used a <a class="external-link" href="https://developer.mozilla.org/en-US/docs/Web/API/Element/click_event" target="_blank">click</a> event in our example above to detect when the button is clicked and then run the code that updates the text label.</li>
+                <li>And much more!</li>
+            </ul>
+
+            <p>What is even more exciting however is the functionality built on top of the client-side JavaScript language. So-called <strong>Application Programming Interfaces (APIs)</strong> provide you with extra superpowers to use in your JavaScript code.</p>
+
+            <p>APIs are ready-made sets of code building blocks that allow a developer to implement programs that would otherwise be hard or impossible to implement. They do the same thing for programming that ready-made furniture kits do for home building — it is much easier to take ready-cut panels and screw them together to make a bookshelf than it is to work out the design yourself, go and find the correct wood, cut all the panels to the right size and shape, find the correct-sized screws, and then put them together to make a bookshelf.</p>
+
+            <p>They generally fall into two categories.</p>
+
+            <img src="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/What_is_JavaScript/browser.png" alt="">
+
+            <p><strong>Browser APIs</strong> are built into your web browser, and are able to expose data from the surrounding computer environment, or do useful complex things. For example:</p>
+
+            <ul>
+                <li>The <a class="external-link" href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model"><code>DOM (Document Object Model) API</code></a> allows you to manipulate HTML and CSS, creating, removing and changing HTML, dynamically applying new styles to your page, etc. Every time you see a popup window appear on a page, or some new content displayed (as we saw above in our simple demo) for example, that's the DOM in action.</li>
+                <li>The Geolocation API retrieves geographical information. This is how Google Maps is able to find your location and plot it on a map.</li>
+                <li>The Canvas and WebGL APIs allow you to create animated 2D and 3D graphics. People are doing some amazing things using these web technologies —see Chrome Experiments and webglsamples.</li>
+                <li>Audio and Video APIs like HTMLMediaElement and WebRTC allow you to do really interesting things with multimedia, such as play audio and video right in a web page, or grab video from your web camera and display it on someone else's computer (try our simple Snapshot demo to get the idea).</li>
+            </ul>
+
+            <p><strong>Third party APIs</strong> are not built into the browser by default, and you generally have to grab their code and information from somewhere on the Web. For example:</p>
+
+            <ul>
+                <li>The Twitter API allows you to do things like displaying your latest tweets on your website.</li>
+                <li>The Google Maps API and OpenStreetMap API allows you to embed custom maps into your website, and other such functionality.</li>
+            </ul>
         </section>
-        <section class="main-section">
-            <header></header>
+        <section class="main-section" id="What_is_JavaScript_doing_on_your_page">
+            <header>What is JavaScript doing on your page?</header>
+            <p>Here we'll actually start looking at some code, and while doing so, explore what actually happens when you run some JavaScript in your page.</p>
+            <p>Let's briefly recap the story of what happens when you load a web page in a browser: when you load a web page in your browser, you are running your code (the HTML, CSS, and JavaScript) inside an execution environment (the browser tab). This is like a factory that takes in raw materials (the code) and outputs a product (the web page).</p>
+            <img src="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/What_is_JavaScript/execution.png" alt="">
+            <p>A very common use of JavaScript is to dynamically modify HTML and CSS to update a user interface, via the Document Object Model API (as mentioned above). Note that the code in your web documents is generally loaded and executed in the order it appears on the page. If the JavaScript loads and tries to run before the HTML and CSS it is affecting has been loaded, errors can occur. </p>
         </section>
-        <section class="main-section">
-            <header></header>
+        <section class="main-section" id="How_do_you_add_JavaScript_to_your_page">
+            <header>How do you add JavaScript to your page?</header>
+            <p>JavaScript is applied to your HTML page in a similar manner to CSS. Whereas CSS uses <code>&lt;link&gt;</code> elements to apply external stylesheets and <code>&lt;style&gt;</code> elements to apply internal stylesheets to HTML, JavaScript only needs one friend in the world of HTML — the <code>&lt;script&gt;</code> element. Let's learn how this works.</p>
+            <h2>Internal JavaScript</h2>
+            <ol>
+                <li>First of all, make a local copy of our example file <a class="external-link" href="https://github.com/mdn/learning-area/blob/master/javascript/introduction-to-js-1/what-is-js/apply-javascript.html">apply-javascript.html</a>. Save it in a directory somewhere sensible.</li>
+                <li>Open the file in your web browser and in your text editor. You'll see that the HTML creates a simple web page containing a clickable button.</li>
+                <li>Next, go to your text editor and add the following in your head — just before your closing </head> tag: <br>
+                <pre>
+                    <code>
+                        &lt;script&gt;
+                            // JavaScript goes here
+                        &lt;script&gt;
+                    </code>
+                </pre></li>
+                <li>Now we'll add some JavaScript inside our <code>&lt;script&gt;</code> element to make the page do something more interesting — add the following code just below the "// JavaScript goes here" line: <br>
+                <pre>
+                    <code>
+                        document.addEventListener("DOMContentLoaded", function() {
+                            function createParagraph() {
+                              let para = document.createElement('p');
+                              para.textContent = 'You clicked the button!';
+                              document.body.appendChild(para);
+                            }
+                          
+                            const buttons = document.querySelectorAll('button');
+                          
+                            for(let i = 0; i < buttons.length ; i++) {
+                              buttons[i].addEventListener('click', createParagraph);
+                            }
+                        });
+                    </code>
+                </pre></li>
+                <li>
+                    Save your file and refresh the browser — now you should see that when you click the button, a new paragraph is generated and placed below.
+                </li>
+            </ol>
+            <h2>External JavaScript</h2>
+            <p>This works great, but what if we wanted to put our JavaScript in an external file? Let's explore this now.</p>
+            <ol>
+                <li>First, create a new file in the same directory as your sample HTML file. Call it <code>script.js</code> — make sure it has that .js filename extension, as that's how it is recognized as JavaScript.</li>
+                <li>Replace your current <code>&lt;script&gt;</code> element with the following: <br>
+                <pre>
+                    <code>
+                        &lt;script src="script.js" defer&gt;&lt;/script&gt;
+                    </code>
+                </pre></li>
+                <li>
+                    Inside script.js, add the following script: <br>
+                    <pre>
+                        <code>
+                            function createParagraph() {
+                                let para = document.createElement('p');
+                                para.textContent = 'You clicked the button!';
+                                document.body.appendChild(para);
+                              }
+                              
+                              const buttons = document.querySelectorAll('button');
+                              
+                              for(let i = 0; i < buttons.length ; i++) {
+                                buttons[i].addEventListener('click', createParagraph);
+                            }
+                        </code>
+                    </pre>
+                </li>
+                <li>Save and refresh your browser, and you should see the same thing! It works just the same, but now we've got our JavaScript in an external file. This is generally a good thing in terms of organizing your code and making it reusable across multiple HTML files. Plus, the HTML is easier to read without huge chunks of script dumped in it.</li>
+            </ol>
         </section>
-        <section class="main-section">
-            <header></header>
+        <section class="main-section" id="Comments">
+            <header>Comments</header>
+            <p>As with HTML and CSS, it is possible to write comments into your JavaScript code that will be ignored by the browser, and exist to provide instructions to your fellow developers on how the code works (and you, if you come back to your code after six months and can't remember what you did). Comments are very useful, and you should use them often, particularly for larger applications. There are two types:</p>
+            <ul>
+                <li>A single line comment is written after a double forward slash (//), e.g. <br><code>// I am a comment</code></li>
+                <li>A multi-line comment is written between the strings /* and */, e.g. <br>
+                <pre>
+                    <code>
+                    /*
+                    I am also
+                    a comment
+                    */
+                    </code>
+                </pre></li>
+            </ul>
+            <p>So for example, we could annotate our last demo's JavaScript with comments like so:</p>
+            <pre>
+                <code>
+                    // Function: creates a new paragraph and appends it to the bottom of the HTML body.
+
+                    function createParagraph() {
+                    let para = document.createElement('p');
+                    para.textContent = 'You clicked the button!';
+                    document.body.appendChild(para);
+                    }
+
+                    /*
+                    1. Get references to all the buttons on the page in an array format.
+                    2. Loop through all the buttons and add a click event listener to each one.
+
+                    When any button is pressed, the createParagraph() function will be run.
+                    */
+
+                    const buttons = document.querySelectorAll('button');
+
+                    for (let i = 0; i < buttons.length ; i++) {
+                    buttons[i].addEventListener('click', createParagraph);
+                    }
+                </code>
+            </pre>
+        </section>
+        <section class="main-section" id="Summary">
+            <header>Summary</header>
+            <p>So there you go, your first step into the world of JavaScript. We've begun with just theory, to start getting you used to why you'd use JavaScript and what kind of things you can do with it. Along the way, you saw a few code examples and learned how JavaScript fits in with the rest of the code on your website, amongst other things.</p>
         </section>
     </main>
     <footer>
