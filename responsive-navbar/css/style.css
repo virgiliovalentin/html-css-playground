@@ -1,0 +1,77 @@
+/*El Messiri for titles and headings, Open Sans for content*/
+@import url('https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;600;700&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,800&display=swap');
+
+/*General rules*/
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+/*Navbar*/
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 8vh;
+    background-color: rgb(58, 58, 58);
+}
+
+.logo{
+    font-family: 'El Messiri', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    font-size: 1.25em;
+}
+
+.nav-links{
+    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: space-around;
+    width: 30%;
+}
+
+.nav-links li{
+    list-style-type: none;
+}
+
+.nav-links a{
+    color: white;
+    text-decoration: none;
+    letter-spacing: 3px;
+    font-weight: 500;
+    font-size: 0.9em;
+}
+
+/*Mobile menu*/
+
+.burger-menu{
+    display: none;
+}
+
+.burger-menu div{
+    width: 20px;
+    height: 3px;
+    background-color: white;
+    margin: 5px;
+}
+
+@media screen and (max-width: 768px) {
+
+    body{
+        overflow: hidden;
+    }
+
+    .nav-links{
+        position: absolute;
+        right: 0px;
+        height: 92vh;
+        top: 8vh;
+        background-color: rgb(58, 58, 58);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+        transform: translateX(100%);
+    }
+}
