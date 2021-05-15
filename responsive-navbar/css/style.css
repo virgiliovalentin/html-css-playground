@@ -47,6 +47,7 @@ nav{
 
 .burger-menu{
     display: none;
+    cursor: pointer;
 }
 
 .burger-menu div{
@@ -54,12 +55,14 @@ nav{
     height: 3px;
     background-color: white;
     margin: 5px;
+    /*Transition is for the burger to transform into an X when in mobile with the class toggle for the divs seen below*/
+    transition: all 0.3s ease;
 }
 
 @media screen and (max-width: 768px) {
 
     body{
-        overflow: hidden;
+        overflow-x: hidden;
     }
 
     .nav-links{
@@ -71,7 +74,44 @@ nav{
         display: flex;
         flex-direction: column;
         align-items: center;
-        width: 50%;
+        width: 100%;
         transform: translateX(100%);
+        transition: transform 0.5s ease-in;
     }
+
+    .nav-links li{
+        opacity: 0;
+    }
+
+    .burger-menu{
+        display: block;
+    }
+}
+
+.nav-active{
+    transform: translateX(0%);
+}
+
+@keyframes navLinkFade {
+    from{
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to{
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+/*Transforms burger menu into X icon when opening it and seeing links*/
+.toggle .line1{
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.toggle .line2{
+    opacity: 0;
+}
+
+.toggle .line3{
+    transform: rotate(45deg) translate(-5px, -6px);
 }
