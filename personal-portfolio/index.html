@@ -4,14 +4,87 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/content.css">
+    <script src="https://kit.fontawesome.com/3e20dee5de.js" crossorigin="anonymous"></script>
     <title>Virgilio Valentín</title>
 </head>
 <body>
-    <nav>
-
+    <nav id="navbar">
+        <div class="logo">
+            <h4>Virgilio Valentín</h4>
+        </div>
+        <ul class="nav-links">
+            <li>
+                <a href="#welcome-section">About</a>
+            </li>
+            <li>
+                <a href="#projects">Projects</a>
+            </li>
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+        </ul>
+        <div class="burger-menu">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
     </nav>
-    <section>
-        
+    <section id="welcome-section">
+        <div class="title">
+            <h1>Hello there! I'm <span>Virgilio Valentín</span>, <br><em>junior web developer</em>.</h1>
+        </div>
     </section>
+    <section id="projects">
+        <div class="title">
+            <h2>Here are some of my projects...</h2><br>
+            <div class="project-container">
+                <a href="https://codepen.io/virgilio-v/pen/XWMmvzB" target="_blank">
+                    <div class="project-tile" id="mapple-landing">
+                        <h3>Mapple Music landing page</h3>
+                        <p>A responsive website annoucing Mapple's new music service.</p>
+                    </div>
+                </a>
+                <a href="https://codepen.io/virgilio-v/pen/zYZxMOE">
+                    <div class="project-tile">
+                        <h3>Mapple Music user survey</h3>
+                        <p>A simple survey form with HTML5 validation.</p>
+                    </div>
+                </a>
+                <a href="https://codepen.io/virgilio-v/pen/JjWGaZw">
+                    <div class="project-tile">
+                        <h3>JavaScript intro documentation</h3>
+                        <p>A responsive technical documentation webiste explaining JavaScript for new developers.</p>
+                    </div>
+                </a>
+                <a href="https://omnicare.herokuapp.com/">
+                    <div class="project-tile">
+                        <h3>Omnicare</h3>
+                        <p>An e-commerce webiste for a health products store. Uses Express.js and MongoDB.</p>
+                    </div>
+                </a>
+                <a href="http://congreso1.ds507.online/">
+                    <div class="project-tile">
+                        <h3>IESTEC 2021</h3>
+                        <p>A landing webpage for IESTEC 2021, the most important technological conference in Central America.</p>
+                    </div>
+                </a>
+                <br>
+            </div>
+        </div>
+    </section>
+    <section id="contact">
+      <div class="title">
+          <h1>Let's work together!</h1>
+          <div class="contact-links">
+            <a href="https://github.com/virgiliovalentin" id="profile-link"><i class="fab fa-github">Github</i></a>
+            <i class="fab fa-twitter">Twitter</i>
+            <i class="fas fa-envelope">E-mail</i>
+          </div>
+      </div>
+    </section>
+    <script src="js/nav-animation.js"></script>
+    
 </body>
 </html>

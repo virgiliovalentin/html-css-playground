@@ -1,0 +1,102 @@
+/*El Messiri for titles and headings, Open Sans for content*/
+@import url('https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;600;700&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,800&display=swap');
+
+
+#welcome-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background-color: white;
+}
+
+.title{
+    font-family: 'El Messiri', sans-serif;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+span{
+    color: brown;
+}
+
+#projects{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    padding-top: 40px;
+    width: 100%;
+    background-color: brown;
+}
+
+#contact{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    padding: 20px;
+    background-color: rgb(58, 58, 58);
+    color: white;
+}
+
+.contact-links{
+    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.contact-links > i{
+    padding: 10px;
+    font-size: 1em;
+    text-align: center;
+}
+
+#projects .title{
+    color: white;
+}
+
+#projects h3{
+    font-size: 1em;
+    color: rgb(58, 58, 58);
+}
+
+.project-container{
+    display: grid;
+    grid-template-rows: repeat(1fr);
+    grid-gap: 30px;
+}
+
+.project-tile{
+    background-color: white;
+    height: 100%;
+    text-align: left;
+    padding: 10px;
+}
+
+.project-tile > p{
+    font-family: 'Open Sans', sans-serif;
+    color: brown;
+    font-size: 0.8em;
+}
+
+@media screen and (max-width: 768px){
+    #projects{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        padding: 40px;
+        width: 100%;
+        background-color: brown;
+    }
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}

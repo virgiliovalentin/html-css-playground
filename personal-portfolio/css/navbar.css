@@ -1,0 +1,120 @@
+/*El Messiri for titles and headings, Open Sans for content*/
+@import url('https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;600;700&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,800&display=swap');
+
+/*General rules*/
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+/*Navbar*/
+nav{
+    display: flex;
+    position: fixed;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 10vh;
+    background-color: rgb(58, 58, 58);
+    z-index: 10;
+}
+
+.logo{
+    font-family: 'El Messiri', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    font-size: 1.25em;
+}
+
+.nav-links{
+    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: space-around;
+    width: 30%;
+}
+
+.nav-links li{
+    list-style-type: none;
+}
+
+.nav-links a{
+    color: white;
+    text-decoration: none;
+    letter-spacing: 3px;
+    font-weight: 500;
+    font-size: 0.9em;
+}
+
+/*Mobile menu*/
+
+.burger-menu{
+    display: none;
+    cursor: pointer;
+}
+
+.burger-menu div{
+    width: 20px;
+    height: 3px;
+    background-color: white;
+    margin: 5px;
+    /*Transition is for the burger to transform into an X when in mobile with the class toggle for the divs seen below*/
+    transition: all 0.3s ease;
+}
+
+@media screen and (max-width: 768px) {
+
+    body{
+        overflow-x: hidden;
+    }
+
+    .nav-links{
+        position: absolute;
+        right: 0px;
+        height: 92vh;
+        top: 8vh;
+        background-color: rgb(58, 58, 58);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+    }
+
+    .nav-links li{
+        opacity: 0;
+    }
+
+    .burger-menu{
+        display: block;
+    }
+}
+
+.nav-active{
+    transform: translateX(0%);
+}
+
+@keyframes navLinkFade {
+    from{
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to{
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+/*Transforms burger menu into X icon when opening it and seeing links*/
+.toggle .line1{
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.toggle .line2{
+    opacity: 0;
+}
+
+.toggle .line3{
+    transform: rotate(45deg) translate(-5px, -6px);
+}
