@@ -32,7 +32,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Add solution URL here](https://www.frontendmentor.io/solutions/mobilefirst-stats-preview-card-using-flexbox-gOJ2TfcVo)
-- Live Site URL: [](https://virgiliovalentin.github.io/html-css-playground/stats-preview-card/)
+- Live Site URL: [Live site URL](https://virgiliovalentin.github.io/html-css-playground/stats-preview-card/)
 
 ## My process
 
