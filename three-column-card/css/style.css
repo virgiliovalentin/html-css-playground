@@ -21,6 +21,7 @@
 body{
     width: 100%;
     font-size: 15px;
+    background-color: var(--very-light-gray);
 }
 
 main{
@@ -127,10 +128,10 @@ main{
 
     .luxury-button:hover{
         background-color: var(--very-dark-cyan);
-        color: var(--paragraph-white);
+        color: var(--very-light-gray);
         border-style: solid;
         border-width: 1px;
-        border-color: var(--paragraph-white);
+        border-color: var(--very-light-gray);
     }
 
     .suv-button{
@@ -140,10 +141,10 @@ main{
 
     .suv-button:hover{
         background-color: var(--dark-cyan);
-        color: var(--paragraph-white);
+        color: var(--very-light-gray);
         border-style: solid;
         border-width: 1px;
-        border-color: var(--paragraph-white);
+        border-color: var(--very-light-gray);
     }
 
     .sedan-button{
@@ -153,9 +154,9 @@ main{
 
     .sedan-button:hover{
         background-color: var(--bright-orange);
-        color: var(--paragraph-white);
+        color: var(--very-light-gray);
         border-style: solid;
         border-width: 1px;
-        border-color: var(--paragraph-white);
+        border-color: var(--very-light-gray);
     }
 }
