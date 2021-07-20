@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@400;500;700&display=swap');
+
+:root{
+    --very-dark-magenta: hsl(300, 43%, 22%);
+    --soft-pink: hsl(333, 80%, 67%);
+    --dark-grayish-magenta: hsl(303, 10%, 53%);
+    --light-grayish-magenta: hsl(300, 24%, 96%);
+    --white: hsl(0, 0%, 100%);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    margin: 1rem;
+    font-family: Spartan, sans-serif;
+    font-size: 15px;
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+    width: fit-content;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+.header{
+    margin-top: 5rem;
+}
+
+.intro-title{
+    color: var(--very-dark-magenta);
+    text-align: center;
+    font-size: 2rem;
+}
+
+.intro-desc{
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    color: var(--dark-grayish-magenta);
+    text-align: center;
+    line-height: 1.5rem;
+}
+
+.ratings{
+    text-align: center;
+    font-weight: 700;
+    color: var(--very-dark-magenta);
+    font-size: 0.8rem;
+    line-height: 2rem;
+}
+
+.rating{
+    padding: 10px;
+}
+
+.reviews{
+    margin: 1rem;
+}
+
+.card{
+    margin-bottom: 1.5rem;
+    padding: 30px;
+    background-color: var(--very-dark-magenta);
+    border-radius: 8px;
+}
+
+.buyer{
+    display: flex;
+    flex-direction: row;
+}
+
+.buyer-img{
+    border-radius: 50px;
+    width: 50px;
+}
+
+.buyer-details{
+    padding-left: 20px;
+    color: var(--white);
+    font-weight: 700;
+}
+
+.buyer-title{
+    margin-top: 5px;
+    color: var(--soft-pink);
+    font-weight: 400;
+}
+
+.buyer-review{
+    margin-top: 1rem;
+    color: var(--white);
+    font-weight: 500;
+    font-size: 0.8rem;
+    line-height: 1.3rem;
+}
