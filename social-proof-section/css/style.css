@@ -1,5 +1,7 @@
+/*Google Fonts import*/
 @import url('https://fonts.googleapis.com/css2?family=Spartan:wght@400;500;700&display=swap');
 
+/*Custom CSS properties*/
 :root{
     --very-dark-magenta: hsl(300, 43%, 22%);
     --soft-pink: hsl(333, 80%, 67%);
@@ -8,6 +10,7 @@
     --white: hsl(0, 0%, 100%);
 }
 
+/*General body styling*/
 *{
     margin: 0;
     padding: 0;
@@ -20,6 +23,8 @@ body{
     font-size: 15px;
 }
 
+/*Footer styling*/
+
 .attribution {
     font-size: 11px;
     text-align: center;
@@ -29,6 +34,8 @@ body{
 .attribution a {
     color: hsl(228, 45%, 44%);
 }
+
+/*Header styling: title, short intro*/
 
 .header{
     margin-top: 5rem;
@@ -48,6 +55,8 @@ body{
     line-height: 1.5rem;
 }
 
+/*Ratings styling: stars and their description*/
+
 .ratings{
     text-align: center;
     font-weight: 700;
@@ -60,8 +69,10 @@ body{
     padding: 10px;
 }
 
+/*Buyers' reviews styling: cards, images, titles*/
+
 .reviews{
-    margin: 1rem;
+    margin: 0.5rem;
 }
 
 .card{
@@ -99,4 +110,82 @@ body{
     font-weight: 500;
     font-size: 0.8rem;
     line-height: 1.3rem;
+}
+
+@media screen and (min-width: 1024px) {
+    .container{
+        margin: auto;
+        width: 1024px;
+        height: 100vh;
+    }
+    
+    .header{
+        margin: auto;
+        padding-top: 50px;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .intro{
+        width: 50%;
+        text-align: left;
+    }
+
+    .intro-title{
+        text-align: left;
+        font-size: 3rem;
+    }
+
+    .intro-desc{
+        text-align: left;
+        padding-right: 2rem;
+    }
+
+    .ratings{
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        padding-left: 3rem;
+    }
+
+    .rating{
+        display: flex;
+    }
+
+    .rating:nth-child(2){
+        margin-left: 3rem;
+    }
+
+    .rating:nth-child(3){
+        margin-left: 6rem;
+    }
+
+    .rating > p{
+        margin-left: 20px;
+    }
+
+    .star{
+        height: 50%;
+    }
+
+    .reviews{
+        display: flex;
+        flex-direction: row;
+        margin: 0;
+    }
+
+    .card{
+        margin-right: 2rem;
+    }
+
+    .card:nth-child(2){
+        top: 1rem;
+        position: relative;
+    }
+
+    .card:nth-child(3){
+        top: 2rem;
+        position: relative;
+    }
 }
