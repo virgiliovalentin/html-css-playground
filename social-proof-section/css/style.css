@@ -21,6 +21,7 @@ body{
     margin: 1rem;
     font-family: Spartan, sans-serif;
     font-size: 15px;
+    background-color: var(--light-grayish-magenta);
 }
 
 /*Footer styling*/
