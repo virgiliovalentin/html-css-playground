@@ -1,0 +1,146 @@
+/*Font family import from Google Fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap');
+
+/*Custom CSS properties*/
+:root{
+    --cyan: hsl(179, 62%, 43%);
+    --light-cyan:	hsl(178, 46%, 51%);
+    --bright-yellow: hsl(71, 73%, 54%);
+    --light-gray: hsl(204, 43%, 93%);
+    --grayish-blue: hsl(218, 22%, 67%);
+}
+
+/*General body styling*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Karla, sans-serif;
+    font-size: 1rem;
+    background-color: var(--light-gray);
+}
+
+main{
+    height: 100vh;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*Grid*/
+
+.container{
+    width: 650px;
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    border-radius: 10px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+.intro{
+    grid-column-start: 1;
+    grid-column-end: 4;
+    background-color: white;
+    border-radius: 10px 10px 0 0;
+    padding: 3rem 3rem 1rem 3rem;
+    color: var(--grayish-blue);
+}
+
+.title1{
+    color: var(--cyan);
+    font-size: 2rem;
+}
+
+.subtitle1{
+    color: var(--bright-yellow);
+    font-size: 1.5rem;
+    padding-top: 10px;
+}
+
+.intro > p{
+    padding-top: 10px;
+    line-height: 1.5rem;
+}
+
+.subscription{
+    background-color: var(--cyan);
+    color: var(--light-gray);
+    border-radius: 0 0 0 10px;
+    padding: 2rem 2rem 2rem 3rem;
+    line-height: 2rem;
+}
+
+.why-us{
+    padding: 2rem 2rem 2rem 2rem;
+    background-color: var(--light-cyan);
+    color: var(--light-gray);
+    border-radius: 0 0 10px 0;
+}
+
+.subtitle2{
+    font-size: 1.4rem;
+}
+
+.cost{
+    padding-top: 1rem;
+    font-weight: 700;
+    font-size: 2rem;
+}
+
+.cost > span{
+    font-size: 1rem;
+    color: rgb(143, 255, 255);
+}
+
+.sign-up{
+    width: 250px;
+    margin-top: 1rem;
+    padding: 12px;
+    background-color: var(--bright-yellow);
+    border-style: none;
+    border-radius: 5px;
+    color: var(--light-gray);
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.sign-up:hover{
+    box-shadow: 0 0 10px rgba(70, 69, 69, 0.822);
+}
+
+.reasons{
+    padding-top: 10px;
+    list-style-type: none;
+}
+
+@media screen and (max-width: 375px){
+    main{
+        width: 325px;
+        margin: 50px auto;
+    }
+
+    .container{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .intro, .subscription, .why-us{
+        border-radius: 0px;
+        padding: 2rem;
+    }
+
+    .intro > p{
+        line-height: 1.5rem;
+    }
+
+    .sign-up{
+        width: 90%;
+    }
+}
