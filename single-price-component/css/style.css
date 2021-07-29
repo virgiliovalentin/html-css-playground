@@ -76,7 +76,7 @@ main{
 }
 
 .why-us{
-    padding: 2rem 2rem 2rem 2rem;
+    padding: 2rem 2rem 2rem 3rem;
     background-color: var(--light-cyan);
     color: var(--light-gray);
     border-radius: 0 0 10px 0;
